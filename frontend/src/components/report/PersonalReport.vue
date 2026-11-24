@@ -24,8 +24,6 @@ const props = defineProps<{
   name: string
   /** 學生原話（message_id → 內容），時間軸展開「學生回覆」時用；沒有就用報告裡的引用 */
   messageText?: Record<string, string>
-  /** 放在對話框裡：「匯出 PDF」按鈕往左讓出右上角的關閉按鈕 */
-  inDialog?: boolean
 }>()
 
 const meta = computed(() =>
@@ -130,7 +128,7 @@ const gaps = computed(() => {
 <template>
   <article ref="article" class="flex min-w-0 flex-col gap-6 [overflow-wrap:anywhere]">
     <!-- 沒有回答的報告沒有標題列，「匯出 PDF」自己一行 -->
-    <div v-if="noResponses" class="flex justify-end print:hidden" :class="inDialog && 'pr-10'">
+    <div v-if="noResponses" class="flex justify-end print:hidden">
       <Button variant="secondary" size="sm" :disabled="exporting" @click="exportPdf">
         <Download class="size-4" aria-hidden="true" />{{ t('report.exportPdf') }}
       </Button>
@@ -139,7 +137,7 @@ const gaps = computed(() => {
       {{ t('report.pdfHeading', { name, date: exportDate }) }}
     </p>
     <header v-if="!noResponses" class="flex flex-col gap-4">
-      <!-- 姓名和「匯出 PDF」同一行：姓名靠左、按鈕靠右（對話框裡往左讓出關閉按鈕） -->
+      <!-- 姓名和「匯出 PDF」同一行：姓名靠左、按鈕靠右 -->
       <div class="flex flex-wrap items-center gap-4">
         <h2 class="text-h1-title text-foreground">{{ name }}</h2>
         <span
@@ -151,7 +149,6 @@ const gaps = computed(() => {
           variant="secondary"
           size="sm"
           class="ml-auto print:hidden"
-          :class="inDialog && 'mr-10'"
           :disabled="exporting"
           @click="exportPdf"
         >

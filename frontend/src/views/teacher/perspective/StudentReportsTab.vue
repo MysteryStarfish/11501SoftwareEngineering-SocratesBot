@@ -138,16 +138,12 @@ const open = computed({
     </p>
 
     <Dialog v-model:open="open">
-      <DialogScrollContent class="max-w-[883px] bg-card p-6 sm:p-10">
+      <!-- 上方留給右上角的關閉按鈕（自己一個區塊），姓名和「匯出 PDF」在下面 -->
+      <DialogScrollContent class="max-w-[883px] bg-card p-6 pt-20 sm:p-10 sm:pt-20">
         <DialogTitle class="sr-only">{{
           t('perspective.reportTitle', { name: selected?.student_display_name ?? '' })
         }}</DialogTitle>
-        <PersonalReport
-          v-if="selected"
-          :report="selected"
-          :name="selected.student_display_name"
-          in-dialog
-        />
+        <PersonalReport v-if="selected" :report="selected" :name="selected.student_display_name" />
       </DialogScrollContent>
     </Dialog>
   </div>
