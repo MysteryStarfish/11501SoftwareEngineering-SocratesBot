@@ -528,6 +528,7 @@ export default {
       '학생들의 탐구가 일단락되면 「대화 종료 후 요약」을 누르세요. AI가 보고서를 바탕으로 반 전체의 관점을 묶어 정리합니다.',
     title: '학급의 관점',
     editSetup: '설정 편집',
+    viewSetup: '설정 보기',
     summarizing: '정리 중…',
     refresh: '정리 새로 고침',
     generateFailed: '정리를 만들지 못했습니다. 잠시 후 다시 시도해 주세요.',

@@ -219,11 +219,15 @@ const closeDescription = computed(() =>
 
     <div class="mt-[23px] flex flex-wrap items-center justify-between gap-3">
       <h2 class="text-h1-title text-foreground">{{ title }}</h2>
+      <!-- 草稿：編輯設定；發布後：檢視設定（設定頁會鎖住、只能看，照 Figma P12-2）。
+           後端讀設定也要老師或有 edit_topics 的助教，所以兩種都用同一個權限判斷 -->
       <RouterLink
-        v-if="topic?.topic_status === 'setup' && can('edit_topics')"
+        v-if="topic && can('edit_topics')"
         :to="{ name: 'TeacherActivitySetup', params: { courseId, topicId } }"
         class="rounded text-body-lg text-muted-foreground underline outline-none hover:text-foreground focus-visible:ring-[3px] focus-visible:ring-ring/50"
-        >{{ t('perspective.editSetup') }}</RouterLink
+        >{{
+          topic.topic_status === 'setup' ? t('perspective.editSetup') : t('perspective.viewSetup')
+        }}</RouterLink
       >
       <Button v-if="canGenerate" :disabled="busy" @click="onGenerate">
         <SpinnerIcon v-if="busy" class="animate-spin" />

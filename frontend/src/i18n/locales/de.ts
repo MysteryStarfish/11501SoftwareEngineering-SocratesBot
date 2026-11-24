@@ -544,6 +544,7 @@ export default {
       'Wenn die Lernenden fertig sind, „Dialoge beenden und zusammenfassen“ wählen – die KI gruppiert die Perspektiven der Klasse anhand der Berichte.',
     title: 'Sichtweisen der Klasse',
     editSetup: 'Einrichtung bearbeiten',
+    viewSetup: 'Einstellungen ansehen',
     summarizing: 'Wird zusammengefasst…',
     refresh: 'Zusammenfassung aktualisieren',
     generateFailed: 'Zusammenfassung konnte nicht erstellt werden. Bitte später erneut versuchen.',

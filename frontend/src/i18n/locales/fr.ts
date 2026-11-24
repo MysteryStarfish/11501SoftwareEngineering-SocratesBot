@@ -537,6 +537,7 @@ export default {
       "Quand les élèves ont terminé, choisissez « Terminer et synthétiser » : l'IA regroupera les points de vue de la classe à partir des rapports.",
     title: 'Points de vue de la classe',
     editSetup: 'Modifier la configuration',
+    viewSetup: 'Voir les réglages',
     summarizing: 'Synthèse en cours…',
     refresh: 'Actualiser la synthèse',
     generateFailed: 'Impossible de créer la synthèse. Réessayez plus tard.',

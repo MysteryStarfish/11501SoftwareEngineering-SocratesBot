@@ -523,6 +523,7 @@ export default {
       '學生探究告一段落後，按「結束對話並整理摘要」，AI 會依報告把全班的觀點分組整理。',
     title: '全班觀點',
     editSetup: '編輯設定',
+    viewSetup: '檢視設定',
     summarizing: '整理中…',
     refresh: '重新整理摘要',
     generateFailed: '整理摘要失敗，請稍後再試',

@@ -528,6 +528,7 @@ export default {
       '学生の探究が一段落したら「対話を終えてまとめる」を押すと、AI がレポートをもとにクラスの観点をグループにまとめます。',
     title: 'クラスの考え',
     editSetup: '設定を編集',
+    viewSetup: '設定を見る',
     summarizing: 'まとめ中…',
     refresh: 'まとめを更新',
     generateFailed: 'まとめを作成できませんでした。しばらくしてからお試しください。',

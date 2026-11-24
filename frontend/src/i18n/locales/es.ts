@@ -535,6 +535,7 @@ export default {
       'Cuando los estudiantes terminen, elige «Terminar y resumir» y la IA agrupará los puntos de vista de la clase a partir de los informes.',
     title: 'Perspectivas de la clase',
     editSetup: 'Editar configuración',
+    viewSetup: 'Ver configuración',
     summarizing: 'Resumiendo…',
     refresh: 'Actualizar resumen',
     generateFailed: 'No se pudo crear el resumen. Inténtalo más tarde.',

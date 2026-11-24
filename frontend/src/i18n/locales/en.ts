@@ -533,6 +533,7 @@ export default {
       'When students are done, choose "End dialogues and summarize" and AI will group the class viewpoints from their reports.',
     title: 'Class perspectives',
     editSetup: 'Edit settings',
+    viewSetup: 'View setup',
     summarizing: 'Summarizing…',
     refresh: 'Refresh summary',
     generateFailed: 'Could not create the summary. Please try again later.',

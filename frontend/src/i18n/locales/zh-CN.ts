@@ -518,6 +518,7 @@ export default {
       '学生探究告一段落后，按「结束对话并整理摘要」，AI 会依报告把全班的观点分组整理。',
     title: '全班观点',
     editSetup: '编辑设置',
+    viewSetup: '查看设置',
     summarizing: '整理中…',
     refresh: '刷新摘要',
     generateFailed: '整理摘要失败，请稍后再试',
