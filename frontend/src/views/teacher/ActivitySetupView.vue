@@ -187,11 +187,16 @@ const title = computed(() =>
         v-if="form"
         :class="[
           editable ? cardClass : cardClass.replace('bg-card', 'bg-border'),
-          'flex flex-col gap-4 p-5 sm:px-8',
+          // 已發布（Figma P12-2）的欄位間距和上下留白比編輯時大一點
+          editable ? 'gap-4 p-5' : 'gap-6 px-5 py-8',
+          'flex flex-col sm:px-8',
         ]"
         @submit.prevent="save.mutate()"
       >
-        <AppBanner v-if="!editable" type="lock">{{ t('setup.locked') }}</AppBanner>
+        <!-- Figma P12-2：已發布時卡片最上面一行點綴色的提示文字（不是提示框） -->
+        <p v-if="!editable" class="text-[20px] leading-tight text-destructive">
+          {{ t('setup.locked') }}
+        </p>
         <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
           <AppSelect
             v-model="form.age_band"

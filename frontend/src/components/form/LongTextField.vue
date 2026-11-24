@@ -75,13 +75,13 @@ const describedBy = computed(() => (footText.value || props.maxlength ? `${id}-f
       :placeholder="placeholder"
       :aria-invalid="error ? true : undefined"
       :aria-describedby="describedBy"
-      class="min-h-[96px] w-full resize-y rounded-lg border bg-background px-4 py-3 text-body-lg text-foreground outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50"
+      class="min-h-[96px] w-full rounded-lg border bg-background px-4 py-3 text-body-lg text-foreground outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50"
       :class="
         locked
-          ? 'border-secondary'
+          ? 'resize-none border-secondary'
           : error
             ? 'border-[1.5px] border-destructive shadow-input'
-            : 'border-border shadow-input hover:border-muted-foreground'
+            : 'resize-y border-border shadow-input hover:border-muted-foreground'
       "
     />
     <div
