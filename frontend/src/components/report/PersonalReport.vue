@@ -129,7 +129,8 @@ const gaps = computed(() => {
 
 <template>
   <article ref="article" class="flex min-w-0 flex-col gap-6 [overflow-wrap:anywhere]">
-    <div class="flex justify-end print:hidden" :class="inDialog && 'pr-10'">
+    <!-- 沒有回答的報告沒有標題列，「匯出 PDF」自己一行 -->
+    <div v-if="noResponses" class="flex justify-end print:hidden" :class="inDialog && 'pr-10'">
       <Button variant="secondary" size="sm" :disabled="exporting" @click="exportPdf">
         <Download class="size-4" aria-hidden="true" />{{ t('report.exportPdf') }}
       </Button>
@@ -138,6 +139,7 @@ const gaps = computed(() => {
       {{ t('report.pdfHeading', { name, date: exportDate }) }}
     </p>
     <header v-if="!noResponses" class="flex flex-col gap-4">
+      <!-- 姓名和「匯出 PDF」同一行：姓名靠左、按鈕靠右（對話框裡往左讓出關閉按鈕） -->
       <div class="flex flex-wrap items-center gap-4">
         <h2 class="text-h1-title text-foreground">{{ name }}</h2>
         <span
@@ -145,6 +147,16 @@ const gaps = computed(() => {
         >
           {{ meta }}
         </span>
+        <Button
+          variant="secondary"
+          size="sm"
+          class="ml-auto print:hidden"
+          :class="inDialog && 'mr-10'"
+          :disabled="exporting"
+          @click="exportPdf"
+        >
+          <Download class="size-4" aria-hidden="true" />{{ t('report.exportPdf') }}
+        </Button>
       </div>
       <div class="flex flex-wrap items-center justify-between gap-3">
         <span
